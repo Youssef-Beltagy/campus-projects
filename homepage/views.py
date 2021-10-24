@@ -10,3 +10,6 @@ def allprojects(request):
 
 def createproject(request):
     return render(request, 'homepage/create_project.html')
+
+def postsubmit(request):
+    return render(request, 'homepage/post_submit.html')
