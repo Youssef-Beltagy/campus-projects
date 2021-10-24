@@ -17,26 +17,27 @@
       <div class="card">
         <div class="card-header"> {{ project.name }} </div>
         <div class="card-body"> {{project.description}} </div>
-        <div class="card-footer"> <a href="{% url 'viewproject'% }"> View Project </a></div>
-        <!--TODO: I question the necessity of this <div class="card-footer"> <a href="https://google.com"> View Project </a></div> -->
-        <!-- TODO: ADD Links to a project page -->
-        <!-- TODO: How to handle more than three projects -> autmatically make another row -->
+        <div class="card-footer"> <a href="/view/{{project.id}}"> View Project </a></div>
       </div>
     </div>
     {% endfor %}
   </div>
 </div>
 
-<div class="container p-5 "> <!-- Turn this into a for-loop later with the project information -->
+<div class="container p-5 ">
+  <!-- Turn this into a for-loop later with the project information -->
   <h1> Seeking Volunteers </h1>
-  {% for project in seeking_volunteers %}
-  <div class="col-sm-4">
-  <div class="card">
-    <div class="card-header"> {{ project.name }} </div>
-    <div class="card-body"> {{project.description}} </div>
+  <div class="row">
+    {% for project in seeking_volunteers %}
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-header"> {{ project.name }} </div>
+        <div class="card-body"> {{project.description}} </div>
+        <div class="card-footer"> <a href="/view/{{project.id}}"> View Project </a></div>
+      </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>
 
 {% endblock body %}

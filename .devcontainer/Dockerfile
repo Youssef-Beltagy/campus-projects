@@ -11,6 +11,8 @@ ENV PYTHONUNBUFFERED=1
 RUN pip install django==3.2.8
 RUN pip install django-crispy-forms
 RUN pip install pillow
+RUN pip install django-taggit
+
 
 
 # [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
