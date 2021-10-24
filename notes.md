@@ -8,10 +8,10 @@
 ## TODO
 - ~~Add voting functionality --> Youssef~~
 - A page to view a single Project --> improve to display other stuff --> possibly display image
-- Add Tags -->
-- submit project and make presentation
+- Add links from homepage and all projects to individual project pages
+- Add Tags
 
-- url
+- submit project and make presentation
 
 ## Notes
 - Urls file
