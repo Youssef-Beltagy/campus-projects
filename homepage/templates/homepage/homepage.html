@@ -15,9 +15,9 @@
     {% for project in featured_projects %}
     <div class="col-sm-4">
       <div class="card">
-        <div class="card-header"> {{ project.name }} </div>
+        <div class="card-header"> <a href="/view/{{project.id}}">{{ project.name }} </a> </div>
         <div class="card-body"> {{project.description}} </div>
-        <div class="card-footer"> <a href="/view/{{project.id}}"> View Project </a></div>
+        <div class="card-footer"> votes: {{project.votes}}</div>
       </div>
     </div>
     {% endfor %}
@@ -31,9 +31,9 @@
     {% for project in seeking_volunteers %}
     <div class="col-sm-4">
       <div class="card">
-        <div class="card-header"> {{ project.name }} </div>
+        <div class="card-header"> <a href="/view/{{project.id}}">{{ project.name }} </a></div>
         <div class="card-body"> {{project.description}} </div>
-        <div class="card-footer"> <a href="/view/{{project.id}}"> View Project </a></div>
+        <div class="card-footer">  View Project {{project.votes}}</div>
       </div>
     </div>
     {% endfor %}

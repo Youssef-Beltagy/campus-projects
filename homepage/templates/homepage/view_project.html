@@ -10,9 +10,11 @@
 </div>
 
 <div class="container p-5 "> 
-    <div class="card-body"> {{project.image}} </div> 
-    <div class="card-body"> {{project.description}} </div>
-    <div class="card-footer"> {{project.URL}} </div>
+    <!-- <div class="card-body"> {{project.image}} </div>  -->
+    <div class="card-body"> {{project.description}} <br>
+    Votes: {{project.votes}}
+    </div>
+    <!-- <div class="card-footer"> {{project.URL}} </div> -->
 </div>
 
 <div class="container p-5 ">
@@ -20,7 +22,7 @@
   <form action="/view/{{ project.id}}" method="post">
     <div class="mb-3 mt-3">
       {% csrf_token %}
-    <button type="submit" class="btn btn-success float-right">Submit</button>
+    <button type="submit" class="btn btn-success float-right">Upvote</button>
   </form>
   </div>
 </div>
