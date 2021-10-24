@@ -9,8 +9,10 @@
   <h1>{{project.name}}</h1>
 </div>
 
-<div class="container p-5 "> <!-- fancy form incoming -->
+<div class="container p-5 "> 
+    <div class="card-body"> {{project.image}} </div> 
     <div class="card-body"> {{project.description}} </div>
+    <div class="card-footer"> {{project.URL}} </div>
 </div>
 
 {% endblock body%}
