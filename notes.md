@@ -6,7 +6,7 @@
 
 
 ## TODO
-- Add voting functionality --> Youssef
+- ~~Add voting functionality --> Youssef~~
 - A page to view a single Project --> improve to display other stuff --> possibly display image
 - Add Tags -->
 - submit project and make presentation

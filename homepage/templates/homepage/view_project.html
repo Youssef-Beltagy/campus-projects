@@ -15,4 +15,14 @@
     <div class="card-footer"> {{project.URL}} </div>
 </div>
 
+<div class="container p-5 ">
+  <div class="mx-auto" style="max-width: 60%;">
+  <form action="/view/{{ project.id}}" method="post">
+    <div class="mb-3 mt-3">
+      {% csrf_token %}
+    <button type="submit" class="btn btn-success float-right">Submit</button>
+  </form>
+  </div>
+</div>
+
 {% endblock body%}

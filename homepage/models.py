@@ -10,18 +10,12 @@ from datetime import date
 #https://realpython.com/django-templates-tags-filters/
 
 
-#TODO: ADD User Foreign Key
-#TODO: Add Project Status choice: WONTFIX
-#TODO: ADD expected commitment choice: WONTFIX
-#TODO: ADD tags
-
 class Project(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     contact_email = models.EmailField(null=True)
 
     lookingforpeople = models.BooleanField(default=True)
-
     
     url = models.URLField(null=True)
     image = models.ImageField(null=True)
