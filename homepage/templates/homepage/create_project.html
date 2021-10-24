@@ -5,6 +5,7 @@
 <head>
   <title>Campus Projects</title>
   {% load static %}
+  {%load crispy_forms_tags %} 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="{% static 'homepage/styles.css' %}">
@@ -40,25 +41,27 @@
 
 <div class="container p-5 "> <!-- fancy form incoming -->
     <div class="mx-auto" style="max-width: 60%;">
-    <form action="/action_page.php">
+    <form action="/your-project/" method="post">
     <h2>Submit a project</h2>
-      <div class="mb-3 mt-3">
-        <label for="name"> Project Title </label>
-        <input type="text" class="form-control" id="Project Title" placeholder="Enter project name" name="Project Title">
+     <div class="mb-3 mt-3">
+        {% csrf_token %}
+        {{form|crispy}}
+        <!-- <label for="project_name"> Project Title </label>
+        <input type="text" class="form-control" id="project_name" placeholder="Enter project name" name="Project Title">
       </div>
       <div class="mb-3">
-        <label for="link"> Project URL </label>
-        <input type="url" class="form-control" id="Project URL" placeholder="Project link" name="ProjectURL">
+        <label for="project_URL"> Project URL </label>
+        <input type="url" class="form-control" id="project_URL" placeholder="Project link" name="ProjectURL">
       </div>
       <div class="mb-3">
         <label for="tags"> Tags </label>
-        <input type="text" class="form-control" id="Tags" placeholder="Tags separated by comma" name="Tags">
+        <input type="text" class="form-control" id="tags" placeholder="Tags separated by comma" name="Tags">
       </div>
       <div class="mb-3">
-        <label for="tags"> Description </label>
-        <textarea type="text" class="form-control" id="Description" rows="3" placeholder="Describe the project" name="Description"></textarea>  
-      </div>  
-      <button type="submit" class="btn btn-success float-right">Submit</button>
+        <label for="description"> Description </label>
+        <textarea type="text" class="form-control" id="description" rows="3" placeholder="Describe the project" name="Description"></textarea>  
+      </div> -->
+      <button type="submit" class="btn btn-success float-right">Submit </button>
     </form>
     </div>
 </div>
