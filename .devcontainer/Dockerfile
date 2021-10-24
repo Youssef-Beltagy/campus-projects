@@ -10,6 +10,7 @@ RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/
 ENV PYTHONUNBUFFERED=1
 RUN pip install django==3.2.8
 RUN pip install django-crispy-forms
+RUN pip install pillow
 
 
 # [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
