@@ -13,11 +13,12 @@ from datetime import date
 #TODO: ADD User Foreign Key
 #TODO: Add Project Status choice: WONTFIX
 #TODO: ADD expected commitment choice: WONTFIX
+#TODO: ADD tags
 
 class Project(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
-    contact_email = models.EmailField()
+    contact_email = models.EmailField(null=True)
 
     lookingforpeople = models.BooleanField(default=True)
 

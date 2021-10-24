@@ -1,5 +1,7 @@
+from django.http import response
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
 from django.http import HttpResponse
 from django.forms import forms
 
@@ -27,20 +29,35 @@ def viewproject(request, project_id):
     return render(request, 'homepage/view_project.html', context)
 
 def createproject(request):
-    form = ProjectForms(request.POST)
-    return render(request, 'homepage/create_project.html', {'form': form})
+    """Sends the form and processes the reply"""
+    if request.method == 'GET': # If the form has been submitted...
+        form = ProjectForms()
+        return render(request, 'homepage/create_project.html', {'form': form})
+    project = Project()
+    
+    try:
+        project.name = request.POST['project_name']
+        project.description = request.POST['description']
+        project.contact_email = request.POST['email']
 
-def postsubmit(request):
-    #TODO: instead redirect to the project's page
-    #use the form response thing
-    return render(request, 'homepage/post_submit.html')
+        project.lookingforpeople = (request.POST['lookingforpeople'] == "on")
 
-def get_project_info(request):
-    if request.method == 'POST':
-        form = ProjectForms(request.POST)
-        if form.is_valid():
-                return HttpResponseRedirect('/thanks/')
-        else:
-            form = ProjectForms() # wrong input, just reload
-            return render(request, 'homepage/create_project.html', {'form': form})
+        project.image = request.POST["image"]
+
+        project.url = request.POST['project_URL']
+
+        tags = request.POST['tags'] # TOBE used later
+
+        project.save()
+        
+
+    except (KeyError):
+        # Redisplay the question voting form.
+        return HttpResponse("Submission Failed")
+
+    else:
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the Back button.
+        return HttpResponseRedirect('/view/{}'.format(project.id))    
         

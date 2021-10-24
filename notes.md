@@ -7,6 +7,13 @@
 
 ## TODO
 - A page to view a single Project
+- Add Tags
+- ADD users
+- ADD User Foreign Key
+- Add Project Status choice: WONTFIX
+- ADD expected commitment choice: WONTFIX
+- ADD tags
+- Delete Thankyou
 
 ## Notes
 - Urls file
