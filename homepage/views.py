@@ -26,7 +26,14 @@ def allprojects(request):
 def viewproject(request, project_id):
     project = get_object_or_404(Project, pk=project_id)
     context = {"project":project}
-    return render(request, 'homepage/view_project.html', context)
+    if(request.method == "GET"):
+        return render(request, 'homepage/view_project.html', context)
+    
+    #POST request increments the vote, but without validation
+    project.votes += 1
+    project.save()
+    return HttpResponseRedirect('/view/{}'.format(project.id))
+
 
 def createproject(request):
     """Sends the form and processes the reply"""
@@ -40,7 +47,7 @@ def createproject(request):
         project.description = request.POST['description']
         project.contact_email = request.POST['email']
 
-        project.lookingforpeople = (request.POST['lookingforpeople'] == "on")  
+        project.lookingforpeople = (request.POST['lookingforpeople'] == "on")
 
         project.image = request.POST["image"]
 
