@@ -8,7 +8,7 @@ class ProjectForms(forms.Form):
     description = forms.CharField(label='Description', max_length=1000, required=True)
     email = forms.EmailField(label='Email', required=True)
 
-    lookingforpeople = forms.BooleanField(label='Looking For People',required=True)
+    lookingforpeople = forms.BooleanField(label='Looking For People',required=False)
 
     image = forms.ImageField(label="Image", required=False)
 
