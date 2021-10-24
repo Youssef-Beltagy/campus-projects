@@ -24,16 +24,16 @@
                 <!-- empty literally just for the right-alignment for the buttons -->
             </ul>
             <form class="d-flex" >
-                <button class="btn btn-primary" formaction="{% url 'allprojects' %}" style="  margin: 4px 2px;"> Browse Projects</button>
+                <button class="btn btn-success" formaction="{% url 'allprojects' %}" style="  margin: 4px 2px;"> Browse Projects</button>
               </form>
               <form class="d-flex" >
-                <button class="btn btn-info" formaction="{% url 'createproject' %}"  style = "  margin: 4px 2px; " >Submit Project</button>
+                <button class="btn btn-success" formaction="{% url 'createproject' %}"  style = "  margin: 4px 2px; " >Submit Project</button>
               </form>
           </div>
         </div>
       </nav>
 
-<div class="container-fluid p-5 bg-primary text-white text-center">
+<div class="container-fluid p-5 herobg  text-white text-center">
   <h1>Submit A Project </h1>
   <p> Share your projects and what help you're looking for!</p> 
 </div>
@@ -58,7 +58,7 @@
         <label for="tags"> Description </label>
         <textarea type="text" class="form-control" id="Description" rows="3" placeholder="Describe the project" name="Description"></textarea>  
       </div>  
-      <button type="submit" class="btn btn-primary float-right">Submit</button>
+      <button type="submit" class="btn btn-success float-right">Submit</button>
     </form>
     </div>
 </div>
