@@ -5,7 +5,10 @@
 - Awesome Django Official Tutorial: https://docs.djangoproject.com/en/3.2/intro/tutorial02/
 
 
+## TODO
+- A page to view a single Project
 
+## Notes
 - Urls file
 - 'polls.apps.PollsConfig'
 - views
@@ -16,6 +19,7 @@
 - Remember to save values
 - Add __str__(self) methods
 - https://docs.djangoproject.com/en/3.2/intro/tutorial03/
+- python manage.py createsuperuser
 
 
 - Playground: python manage.py shell
@@ -29,7 +33,7 @@
 - question.choice_set.count()
 - Choice.objects.filter(question__pub_date__year=current_year)
 - choice.delete()
-- python manage.py createsuperuser
+- 
     - Asks for username, email, password
 - Question.objects.order_by('-pub_date')[:5]
     output = ', '.join([q.question_text for q in latest_question_list])
