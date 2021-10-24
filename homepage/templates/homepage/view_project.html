@@ -1,0 +1,16 @@
+
+{% extends 'homepage/base.html' %}
+
+{% block body %}
+
+<!---TODO: Make this page view a project + add more stuff to it-->
+
+<div class="container-fluid p-5 herobg  text-white text-center">
+  <h1>{{project.name}}</h1>
+</div>
+
+<div class="container p-5 "> <!-- fancy form incoming -->
+    <div class="card-body"> {{project.description}} </div>
+</div>
+
+{% endblock body%}
