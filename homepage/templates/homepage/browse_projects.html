@@ -15,26 +15,21 @@
 
 <div class="container p-5 "> <!-- Turn this into a for-loop later with the project information -->
   <div class="row">
-    <div class="col-sm-4">
-      <div class="card">
-          <div class="card-header"> Header</div>
-          <div class="card-body">Description here </div>
-          <div class="container p-3">  <span class="badge bg-secondary">tag??</span>  </div>
+      {% for project in featured_projects %}
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-header">  <a href="/view/{{project.id}}"> <h4>  {{ project.name }}</h4></a>  </div>
+          <div class="card-body"> {{project.description}} </div>
+          <div class="card-footer d-flex"> <br> <button type="submit" class="btn btn-success float-left"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+          </svg></button>
+        </form> <p class="mx-3"> Total votes: {{project.votes}}</p></div>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="card">
-            <div class="card-header"> Header</div>
-            <div class="card-body">Description here </div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="card">
-            <div class="card-header"> Header</div>
-            <div class="card-body">Description here </div>
-        </div>
+      {% endfor %}
     </div>
   </div>
+  
 </div>
 
 {% endblock body %}
